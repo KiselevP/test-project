@@ -26,8 +26,8 @@
         </div>
 
         <div class="form-group">
-            <label for="massage">Сообщение</label>
-            <textarea class="form-control" name="massage" placeholder="Введите сообщение" id="massage"></textarea>
+            <label for="message">Сообщение</label>
+            <textarea class="form-control" name="message" placeholder="Введите сообщение" id="message"></textarea>
         </div>
 
         <button class="btn btn-success" type="submit">Отправить</button>
