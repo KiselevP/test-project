@@ -26,6 +26,26 @@ Route::get('/contact', function () {
     return view('contact');
 })->name('contact');
 
-Route::get('/contact/all', [ContactController::class, 'allData'])->name('contact-data');
+Route::get('/contact/allMessages/{id}',
+    [ContactController::class, 'showOneMessage'])
+        ->name('contact-data-one');
 
-Route::post('/contact/submit', [ContactController::class, 'submit'])->name('contact-form');
+Route::get('/contact/allMessages/{id}/update',
+    [ContactController::class, 'updateMessage'])
+    ->name('contact-update');
+
+Route::post('/contact/allMessages/{id}/update',
+    [ContactController::class, 'updateMessageSubmit'])
+    ->name('contact-update-submit');
+
+Route::get('/contact/allMessages/{id}/delete',
+    [ContactController::class, 'deleteMessage'])
+    ->name('contact-delete');
+
+Route::get('/contact/allMessages',
+    [ContactController::class, 'allData'])
+    ->name('contact-data');
+
+Route::post('/contact/submit',
+    [ContactController::class, 'submit'])
+    ->name('contact-form');
